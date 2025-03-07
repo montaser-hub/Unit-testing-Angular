@@ -1,0 +1,12 @@
+@if (messageService.messages.length) {
+
+  <div id="container">
+  
+    <h2>Messages</h2>
+    @for (message of messageService.messages; track message.id) {
+  
+    <div class="msg">{{message.message}}</div>
+    }
+  
+  </div>
+  }

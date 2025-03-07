@@ -1,0 +1,30 @@
+<h2>My Heroes</h2>
+
+<ul class="heroes">
+  @for (hero of heroes; track hero.id) {
+    <li>
+      <app-hero [hero]="hero"></app-hero>
+    </li>
+  }
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div>
+  <label>Hero name:
+    <input #heroName />
+  </label> -->
+  <!-- (click) passes input value to add() and then clears the input -->
+  <!-- <button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+</div> -->
