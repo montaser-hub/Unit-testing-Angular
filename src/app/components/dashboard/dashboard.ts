@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { Ihero } from '../ihero';
-import { HeroService } from '../services/hero-service/hero.service';
-import { StrengthPipe } from '../pipes/strength/strength-pipe';
+import { Ihero } from '../../models/ihero';
+import { HeroService } from '../../services/hero-service/hero.service';
+import { StrengthPipe } from '../../pipes/strength/strength-pipe';
 import { RouterModule } from '@angular/router';
 
 @Component({

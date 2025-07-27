@@ -2,8 +2,8 @@ import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule, Location } from '@angular/common';
 
-import { Ihero }         from '../ihero';
-import { HeroService }  from '../services/hero-service/hero.service';
+import { Ihero }         from '../../models/ihero';
+import { HeroService }  from '../../services/hero-service/hero.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({

@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Ihero } from '../../ihero';
+import { Ihero } from '../../models/ihero';
 import { MessageService } from '../message/message.service';
 
 const httpOptions = {

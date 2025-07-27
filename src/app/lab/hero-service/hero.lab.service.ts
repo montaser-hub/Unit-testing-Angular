@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable} from 'rxjs';
-import { Ihero } from '../../ihero';
+import { Ihero } from '../../models/ihero';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })

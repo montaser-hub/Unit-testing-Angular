@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Messages } from './messages/messages';
+import { Messages } from './components/messages/messages';
 
 @Component({
     selector: 'app-root',

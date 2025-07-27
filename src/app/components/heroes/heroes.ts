@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
-import { Ihero } from '../ihero';
-import { HeroService } from '../services/hero-service/hero.service';
+import { Ihero } from '../../models/ihero';
+import { HeroService } from '../../services/hero-service/hero.service';
 import { Hero} from '../hero/hero';
 
 @Component({
