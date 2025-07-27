@@ -13,8 +13,7 @@ import { RouterModule } from '@angular/router';
 export class Dashboard implements OnInit {
   heroes: Ihero[] = [];
 
-  constructor(private heroService: HeroService,private cdr: ChangeDetectorRef,
-  ) { }
+  constructor(private heroService: HeroService,private cdr: ChangeDetectorRef) { }
   
   ngOnInit() {
     
