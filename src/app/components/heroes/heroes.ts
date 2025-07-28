@@ -26,7 +26,8 @@ export class Heroes implements OnInit {
   
   getHeroes(): void {
     this.heroService.getHeroes()
-    .subscribe(heroes =>{ this.heroes = heroes
+    .subscribe(heroes =>{ 
+      this.heroes = heroes
       this.cdr.detectChanges()
     });
   }
