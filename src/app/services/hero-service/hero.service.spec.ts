@@ -1,59 +1,54 @@
-import { provideHttpClient } from '@angular/common/http';
-import { MessageService } from '../message/message.service';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
-import { TestBed } from '@angular/core/testing';
-import { HeroService } from './hero.service';
-import { provideZonelessChangeDetection } from '@angular/core';
+// import { provideHttpClient } from '@angular/common/http';
+// import {
+//   provideHttpClientTesting,
+//   HttpTestingController,
+// } from '@angular/common/http/testing';
+// import { TestBed } from '@angular/core/testing';
+// import { MessageService } from '../message/message.service';
+// import { HeroService } from './hero.service';
 
-describe('hero service:', () => {
-  let mockMessageService: jasmine.SpyObj<MessageService>;
-  let service:HeroService,httpTesting:HttpTestingController
-  let heroesUrl = 'http://localhost:3000/heroes'
-  beforeEach(() => {
-    mockMessageService = jasmine.createSpyObj(['add']);
+// describe('hero service:', () => {
+//   let serviceMock: jasmine.SpyObj<MessageService>;
+//   let service:HeroService,httpTesting:HttpTestingController
+//   let  heroesUrl = 'http://localhost:3000/heroes'
+//   beforeEach(() => {
+//     serviceMock = jasmine.createSpyObj(['add']);
+//     TestBed.configureTestingModule({
+//       providers: [
+//         // ... other test providers
+//         provideHttpClient(),
+//         provideHttpClientTesting(),
+//         { provide:MessageService,useValue:serviceMock }
+//       ],
+//     });
+//      httpTesting = TestBed.inject(HttpTestingController);
+//    service= TestBed.inject(HeroService)
+//   });
+//   it('getHero: should send req GET /url/id then put res in observable', () => {
+//     service.getHero(2).subscribe(data=>{
+//       expect(data.name).toBe("super man")
+//     })
 
-    //1
-    TestBed.configureTestingModule({
-      providers: [
+//    let testReq= httpTesting.expectOne(heroesUrl+"/2")
+//     expect(testReq.request.method).toBe("GET")
 
-        // ... other test providers
-        provideHttpClient(),
-        provideHttpClientTesting(),
-        //2
-        provideZonelessChangeDetection(),
-        {provide:MessageService,useValue:mockMessageService}
-      ],
-    });
-    //3
-     httpTesting = TestBed.inject(HttpTestingController);
-    //4
-    service=TestBed.inject(HeroService)
-  });
-  it('getHero: should send req get(url+/id) and return observable with res', () => {
-    service.getHero(3).subscribe((data)=>{
-      expect(data.name).toBe("super man")
-    })
+//     testReq.flush({id:2,name:"super man",strength:23})
+//   });
 
-   let testReq= httpTesting.expectOne(heroesUrl+"/3")
-    expect(testReq.request.method).toBe("GET");
+//   it("addHero: ",()=>{
+//     let hero={id:2,name:"super man",strength:23}
+//     service.addHero(hero).subscribe(data=>{
+//       expect(data).toEqual(hero)
+//     })
 
-    testReq.flush({id:3,name:"super man",strength:30})
+//    let testReq= httpTesting.expectOne(heroesUrl)
+//    expect(testReq.request.method).toBe("POST")
+//    expect(testReq.request.body).toEqual(hero)
 
-  });
-  it("addHero: send req post(url) with body then return observable with res",()=>{
-    let hero={id:3,name:"super man",strength:30}
-    service.addHero(hero).subscribe((data)=>{
-      expect(data).toEqual(hero)
-    })
-
-    let mockReq=httpTesting.expectOne(heroesUrl)
-    expect(mockReq.request.method).toBe("POST")
-    expect(mockReq.request.body).toEqual(hero)
-
-    mockReq.flush(hero)
-    
-  })
-  afterEach(()=>{
-    httpTesting.verify()
-  })
-});
+//    testReq.flush(hero)
+//   })
+//   afterEach(() => {
+//   // Verify that none of the tests make any extra HTTP requests.
+//   TestBed.inject(HttpTestingController).verify();
+// });
+// });

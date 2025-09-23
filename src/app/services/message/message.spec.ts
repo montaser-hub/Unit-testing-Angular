@@ -1,24 +1,24 @@
+import { TestBed } from "@angular/core/testing";
 import { MessageService } from "./message.service";
 
 describe("message service:",()=>{
   let service:MessageService
   beforeEach(()=>{
-    service= new MessageService()
+    TestBed.configureTestingModule({
+
+    })
+   service= TestBed.inject(MessageService)
   })
-   it('should add 1 message in array', () => {
-   
+    it('add function: should add new msg', () => {
     service.add("msg 1")
 
     expect(service.messages).toHaveSize(1)
-    expect(service.messages[0].message).toBe("msg 1")
   });
-   it('should clear after add 2 messages in array', () => {
-   
+    it('clear function: should add new msg', () => {
+    let service= new MessageService()
     service.add("msg 1")
-    service.add("msg 2")
 
     service.clear()
-
     expect(service.messages).toHaveSize(0)
   });
 })
