@@ -4,10 +4,8 @@ import { MessageService } from "./message.service";
 describe("message service:",()=>{
   let service:MessageService
   beforeEach(()=>{
-    TestBed.configureTestingModule({
-
-    })
-   service= TestBed.inject(MessageService)
+    
+   service=new MessageService()
   })
     it('add function: should add new msg', () => {
     service.add("msg 1")
